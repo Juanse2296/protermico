@@ -6,7 +6,7 @@ void clang() {
 }
 
 void toClang(int temperature){
-  if(temperature>29){
+  if(temperature>32){
     clang();
   }
 }
