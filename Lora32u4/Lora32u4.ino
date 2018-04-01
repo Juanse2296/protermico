@@ -1,4 +1,4 @@
-//------------------------------------------------- -LIBRERIAS
+//--------------------------------------------------LIBS
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -31,11 +31,9 @@ int gnd = A0;
 
 const int buzzer = 0;
 
-//-------------------------------------------- Communication
+//-------------------------------------------- COMMUNICATION
 
 SoftwareSerial serialToArduino(2, 3);
 String inData;
-
-//--------------------------------------------- Algorith variables
 
 
