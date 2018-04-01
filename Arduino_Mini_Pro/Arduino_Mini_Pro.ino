@@ -5,6 +5,7 @@
 //-------------------------------------------- COMMUNICATION
 String inData;
 SoftwareSerial serialToLora(2, 3);
+SoftwareSerial blueTooth(13, 12);
 
 //--------------------------------------------Keypad 
 
