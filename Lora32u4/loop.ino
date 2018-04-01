@@ -1,6 +1,6 @@
 void loop() {
-  int temperature = sensorTemp();  
-  printTemperature(temperature);
-  showTemperature(temperature);
-  toClang(temperature);
+  float ds_temperature = readDsSensor();
+  readSTH15Sensor();
+  breakTime(ds_temperature, sht_temperature);
+  showTemperature(ds_temperature);
 }

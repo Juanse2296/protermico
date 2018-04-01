@@ -31,7 +31,7 @@ void sht15_init() {
   digitalWrite(gnd, LOW);
 }
 
-void readSensorSTH15()
+void readSTH15Sensor()
 {
   // Read values from the sensor
   sht_temperature = sht15.readTemperatureC();  
