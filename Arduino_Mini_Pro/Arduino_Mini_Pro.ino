@@ -1,52 +1,30 @@
+//--------------------------------------------------LIBS
 #include <SoftwareSerial.h>
+#include <Keypad.h>
 
+//-------------------------------------------- COMMUNICATION
 String inData;
-const int buzzer = 13;
-
 SoftwareSerial serialToLora(2, 3);
-void setup() {
-  //Serial.begin(9600);
-  pinMode(0, OUTPUT);  
-  //digitalWrite(buzzer,HIGH);
-  serialToLora.begin(9600);
- /* while (!Serial) {
-    ;
-  }*/
-}
-void clang() {
-  tone(0, 1000);
- // delay(1000);
-//  noTone(0);
- // delay(500);
-}
-void loop() {
- recieve();
- //sendToLora("test");
-}
 
-void sendToLora(String message) {
- // Serial.println(message); //for test in monitor
-  serialToLora.println(message);
-}
+//--------------------------------------------Keypad 
 
-void recieve() {
-  if (serialToLora.available()) {
-    char recieved = serialToLora.read();
-    inData += recieved;
-    if (recieved == '\n') { // Stop to recieve chars
-     // Serial.print("Received from lora: ");
-     // Serial.println(inData);
-     
-      //delay(500);
-      if(inData=="a"){
-        digitalWrite(buzzer,HIGH);
-      }else if(inData=="b"){
-        digitalWrite(buzzer,LOW);
-      }
-       inData = ""; // Clear recieved buffer
-    }
-  }
-}
+const byte numRows= 4; //number of rows on the keypad
+const byte numCols= 4; //number of columns on the keypad
 
+//keymap defines the key pressed according to the row and columns just as appears on the keypad
+char keymap[numRows][numCols]=
+{
+{'1', '2', '3', 'A'},
+{'4', '5', '6', 'B'},
+{'7', '8', '9', 'C'},
+{'*', '0', '#', 'D'}
+};
+
+//Code that shows the the keypad connections to the arduino terminals
+byte rowPins[numRows] = {11,10,9,8}; //Rows 0 to 3
+byte colPins[numCols]= {7,6,5,4}; //Columns 0 to 3
+
+//initializes an instance of the Keypad class
+Keypad myKeypad= Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols);
 
 
