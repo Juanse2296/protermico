@@ -10,7 +10,7 @@ void breakTime(float ds_temperature, float sht_temperature) {
     Serial.print(result);
     Serial.println(" min por hora");                
   } else{
-     Serial.println("No es necesario");
+     // Serial.println("No es necesario");
   }   
 }
 
