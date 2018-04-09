@@ -4,8 +4,8 @@
 
 //-------------------------------------------- COMMUNICATION
 String inData;
-SoftwareSerial serialToLora(2, 3);
-SoftwareSerial blueTooth(13, 12);
+SoftwareSerial serialToLora(13, 12);
+SoftwareSerial blueTooth(10, 11);
 
 //--------------------------------------------Keypad 
 
@@ -22,10 +22,12 @@ char keymap[numRows][numCols]=
 };
 
 //Code that shows the the keypad connections to the arduino terminals
-byte rowPins[numRows] = {11,10,9,8}; //Rows 0 to 3
-byte colPins[numCols]= {7,6,5,4}; //Columns 0 to 3
+byte rowPins[numRows] = {9,8,7,6}; //Rows 0 to 3
+byte colPins[numCols]= {5,4,3,2}; //Columns 0 to 3
 
 //initializes an instance of the Keypad class
 Keypad myKeypad= Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols);
 
+//---Communication
 
+String message = "" ;

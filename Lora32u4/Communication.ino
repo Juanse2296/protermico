@@ -1,17 +1,14 @@
-void initCommunication(){
-  serialToArduino.begin(9600);
+void initCommunication() {
+  Serial1.begin(9600);
 }
-
-
 void recieve() {
-  if (serialToArduino.available()) {
-    char recieved = serialToArduino.read();
+  while (Serial1.available()) {
+    char recieved = Serial1.read();
     inData += recieved;
-    if (recieved == '\n') { // Stop to recieve chars
-      Serial.print("Received from arduino: ");
+    if (recieved == '\n') {
+      Serial.print("Recieve from arduino: ");
       Serial.println(inData);
-      inData = ""; // Clear recieved buffer
-      //delay(500);
+      inData = "";
     }
   }
 }
