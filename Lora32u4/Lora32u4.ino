@@ -17,19 +17,17 @@
 Adafruit_SSD1306 screen(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 
 //--------------------------------------------TEMPERATURE
-OneWire ourWire(1); //Se establece el pin declarado como bus para la comunicación OneWire
+OneWire ourWire(6); //Se establece el pin declarado como bus para la comunicación OneWire
 DallasTemperature sensors_DS(&ourWire); //Se instancia la librería DallasTemperature
 
 //STH15
-SHT1x sht15(A2, A3);//Data, SCK
+SHT1x sht15(2, 3);//Data, SCK
 float sht_temperature = 0;
 float humidity = 0;
-int power = A1;
-int gnd = A0;
 
 //-------------------------------------------- BUZZER
 
-const int buzzer = 0;
+const int buzzer = A5;
 
 //-------------------------------------------- COMMUNICATION
 
