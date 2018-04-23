@@ -1,5 +1,5 @@
 void loop() {
- keyPressed();
- blueToothRecieve();
+  keyPressed();
+  blueToothRecieve();
 }
 

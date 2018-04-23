@@ -14,13 +14,17 @@ void showInDisplay(int textSize, int x, int y, String text) {
   screen.display();
 }
 
-void printText() {
-  String s;
-  if (Serial.available()) {
-    s = Serial.readString();
-    screen.println(s);
-    screen.display();
-    screen.println("\n");
-  }
-  delay(4000);
+void steps(int action) {
+switch(userStep){
+  case 0:
+  showInDisplay(2, 0 , 15, "Juan");
+  break;
+  case 1:
+  showInDisplay(2, 0 , 15, "Sebastian");
+  break;
+  case 2:
+  showInDisplay(2, 0 , 15, "Reina");
+  break;
 }
+}
+

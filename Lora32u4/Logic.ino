@@ -8,10 +8,11 @@ void breakTime(float ds_temperature, float sht_temperature) {
     int result = (int)60 - ft;
     Serial.print("Descanzo: ");
     Serial.print(result);
-    Serial.println(" min por hora");                
+    Serial.println(" min por hora");     
   } else{
-     // Serial.println("No es necesario");
-  }   
+    Serial.println("No es necesario");
+  }
+  delay(250); 
 }
 
 

@@ -4,7 +4,12 @@ void keyPressed() {
   if (keypressed != NO_KEY)  {
     //Serial.println(keypressed);
 
-    if (keypressed == 'D' && message.length() > 0) { // sending message to lora
+    if (keypressed == 'D' && message.length() > 0) { // Action for send Message to Lora32u4
+      sendToLora();
+    }
+
+    if (keypressed == 'A') { // Action for confirm action
+      message += keypressed;
       sendToLora();
     }
 

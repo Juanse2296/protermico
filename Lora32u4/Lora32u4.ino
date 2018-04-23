@@ -6,8 +6,9 @@
 #include <DallasTemperature.h>
 #include <SoftwareSerial.h>
 #include <SHT1X.h>
+#include <Scheduler.h>
 
-//-------------------------------------------------- -DISPLAY SMALL
+//---------------------------------------------------DISPLAY SMALL
 // If using software SPI (the default case):
 #define OLED_MOSI   9
 #define OLED_CLK   10
@@ -33,5 +34,10 @@ const int buzzer = A5;
 
 SoftwareSerial serialToArduino(2, 3);
 String inData;
+int amount = 0;
+
+//-------------------------------------------- user flow
+
+int userStep= 0;
 
 

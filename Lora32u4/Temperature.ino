@@ -4,8 +4,6 @@ void initTemperature() {
 
 float readDsSensor() {
   sensors_DS.requestTemperatures();
-  /*Serial.print("DS18B20 Temp = ");
-  Serial.println(sensors_DS.getTempCByIndex(0));*/
   float valueTemperature = sensors_DS.getTempCByIndex(0);
   return valueTemperature;
 }
