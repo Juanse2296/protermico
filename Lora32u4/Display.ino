@@ -38,9 +38,9 @@ void steps(int action) {
       break;
     case 5:
       if (resultAlgorithm > 0)  {
-        showInDisplay(2, 10 , 15, "Descanzo: " + String(resultAlgorithm) + " min" );
+        showInDisplay(2, 10 , 15, "Descanso: " + String(resultAlgorithm) + " min" );
       } else {
-        showInDisplay(2, 10 , 15, "No es     necesario descanzar" );
+        showInDisplay(2, 10 , 15, "No es     necesario descansar" );
       }
       break;
   }

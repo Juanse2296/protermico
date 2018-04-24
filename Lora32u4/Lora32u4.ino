@@ -43,5 +43,6 @@ String amount = "";
 
 int userStep = 0;
 String messageToShow = "Cantidad arecolectar...?";
+boolean startToClang = false;
 
 
