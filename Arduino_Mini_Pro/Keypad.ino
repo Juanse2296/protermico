@@ -8,8 +8,8 @@ void keyPressed() {
       sendToLora();
     }
 
-    if (keypressed == 'A') { // Action for confirm action
-      message += keypressed;
+    if (keypressed == 'A' || keypressed == 'B' ) { // Action for confirm action and Change Options
+      message = keypressed;
       sendToLora();
     }
 
