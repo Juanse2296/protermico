@@ -1,5 +1,6 @@
 void initTemperature() {
   sensors_DS.begin();
+  timer.setInterval(5000, readSensors);
 }
 
 float readDsSensor() {
@@ -14,16 +15,13 @@ void showTemperature(int temperature) {
   showInDisplay(3, 20 , 20, textTemperature);
 }
 
-void readSTH15Sensor(){
-  // Read values from the sensor
+void readSTH15Sensor() {
   sht_temperature = sht15.readTemperatureC();
-  /*Serial.print("STH15 Temp = ");
-  Serial.print(sht_temperature);
-  Serial.println("C");*/
   humidity = sht15.readHumidity();
-  /*Serial.print("Humidity = ");
-  Serial.print(humidity);
-  Serial.println("%");*/
 }
 
-
+void readSensors() {
+  ds_temperature = readDsSensor();
+  readSTH15Sensor();
+  breakTime(ds_temperature, sht_temperature);
+}

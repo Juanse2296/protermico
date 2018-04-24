@@ -4,8 +4,4 @@ void setup()   {
   Serial.println("Init LoRa32u4 Ra-02");
   initDisplay();
   initTemperature();
-  Scheduler.startLoop(recieveFromArduino);
 }
-
-
-

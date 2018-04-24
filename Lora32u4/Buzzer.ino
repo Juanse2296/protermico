@@ -5,8 +5,8 @@ void clang() {
   delay(500);
 }
 
-void toClang(int temperature){
-  if(temperature>32){
+void toClang(int temperature) {
+  if (temperature > 32) {
     clang();
   }
 }

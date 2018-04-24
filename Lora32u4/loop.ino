@@ -1,9 +1,6 @@
 void loop() {
-  float ds_temperature = readDsSensor();
-  readSTH15Sensor();
-  breakTime(ds_temperature, sht_temperature);
-  //showTemperature(ds_temperature);
+  timer.run(); // Interval for read sensors
+  recieveFromArduino();
   steps(userStep);
-  delay(500);
 }
 

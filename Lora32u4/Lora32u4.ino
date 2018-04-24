@@ -6,7 +6,7 @@
 #include <DallasTemperature.h>
 #include <SoftwareSerial.h>
 #include <SHT1X.h>
-#include <Scheduler.h>
+#include <SimpleTimer.h>
 
 //---------------------------------------------------DISPLAY SMALL
 // If using software SPI (the default case):
@@ -23,8 +23,11 @@ DallasTemperature sensors_DS(&ourWire); //Se instancia la librería DallasTemper
 
 //STH15
 SHT1x sht15(2, 3);//Data, SCK
+SimpleTimer timer;
 float sht_temperature = 0;
 float humidity = 0;
+float ds_temperature = 0;
+int resultAlgorithm = 0;
 
 //-------------------------------------------- BUZZER
 
@@ -34,10 +37,11 @@ const int buzzer = A5;
 
 SoftwareSerial serialToArduino(2, 3);
 String inData;
-int amount = 0;
+String amount = "";
 
 //-------------------------------------------- user flow
 
-int userStep= 0;
+int userStep = 0;
+String messageToShow = "Cantidad arecolectar...?";
 
 
