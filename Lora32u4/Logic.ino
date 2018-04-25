@@ -6,8 +6,10 @@ void breakTime(float ds_temperature, float sht_temperature) {
   int ft = ((A - B) / ((C - D) + (A - B))) *  60;
   if (ft < 60) {
     resultAlgorithm = (int)60 - ft;
+    userStep = 5;
     startToClang = true;
   } else {
+    startToClang = false;
     resultAlgorithm = 0;
   }
 
@@ -34,7 +36,7 @@ void userActions (char action) {
       break;
     case 'B':      // Change the information that the user sees on the screen
       if (userStep > 2) {
-        if (userStep < 5) {
+        if (userStep < 6) {
           userStep += 1;
         }  else {
           userStep = 3;
