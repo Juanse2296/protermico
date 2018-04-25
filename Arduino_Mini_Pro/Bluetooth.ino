@@ -1,15 +1,19 @@
 void blueToothRecieve() {
-  while (blueTooth.available()) {
-    char recieved = blueTooth.read();
+  if (blueTooth.available()) {
+    dataBluethooth = blueTooth.readString();
     Serial.print("Received from bluetooth: ");
-    Serial.println(recieved);
-
-    if (isDigit(recieved) && isDigit(recieved)) {
-      message += recieved;
-    }
-    
-    if (recieved == '\n' && message.length() > 0 ) {
-      sendToLora();
+    Serial.println(dataBluethooth);
+    if(dataBluethooth != NULL){
+      if(dataBluethooth == "c"){
+        blueTooth.print("#");
+        blueTooth.print("success");
+        blueTooth.print('~');
+        blueTooth.println();
+        Serial.println("llega: " + dataBluethooth);
+        sendIt = true;
+      }else{
+        Serial.println("no es el comando");
+      }
     }
   }
 }
