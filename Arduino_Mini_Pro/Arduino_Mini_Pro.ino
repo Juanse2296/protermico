@@ -6,6 +6,9 @@
 String inData;
 SoftwareSerial serialToLora(13, 12);
 SoftwareSerial blueTooth(10, 11);
+String message = "" ;
+String dataBluethooth = "";
+boolean sendIt;
 
 //--------------------------------------------Keypad 
 
