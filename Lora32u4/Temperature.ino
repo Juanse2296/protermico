@@ -1,6 +1,7 @@
 void initTemperature() {
   sensors_DS.begin();
-  timer.setInterval(5000, readSensors);
+  readSensors();
+  timer.setInterval(15000, readSensors);
 }
 
 float readDsSensor() {

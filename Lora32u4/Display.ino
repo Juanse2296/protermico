@@ -34,7 +34,8 @@ void steps(int action) {
       showTemperature(ds_temperature);
       break;
     case 4:
-      showInDisplay(2, 10 , 15, "Humedad:  " + String(humidity) + " %");
+      messageToShow = "Humedad:  " + String(humidity) + " %";
+      showInDisplay(2, 10 , 15, messageToShow );
       break;
     case 5:
       if (resultAlgorithm > 0)  {
@@ -42,6 +43,10 @@ void steps(int action) {
       } else {
         showInDisplay(2, 10 , 15, "No es     necesario descansar" );
       }
+      break;
+    case 6:
+      messageToShow = "Recolectado: 5/" + String(amount);
+      showInDisplay(2, 0 , 15, messageToShow );
       break;
   }
 }
