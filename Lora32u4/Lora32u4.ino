@@ -42,7 +42,6 @@ String amount = "";
 //-------------------------------------------- user flow
 
 int userStep = 0;
-String messageToShow = "Cantidad arecolectar...?";
 boolean startToClang = false;
 
 
