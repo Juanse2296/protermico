@@ -33,9 +33,11 @@ void userActions (char action) {
       Serial.println("Aceptar"); // Confirms the amount to be collected
       if (userStep == 1)  userStep = 2;
       if (userStep > 2)  startToClang = false;
+      if (userStep > 2 && startToClang)  startToClang = false;
       break;
     case 'B':      // Change the information that the user sees on the screen
       if (userStep > 2) {
+      if (userStep > 2 && !startToClang) {
         if (userStep < 6) {
           userStep += 1;
         }  else {

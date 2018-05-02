@@ -22,7 +22,9 @@ void readSTH15Sensor() {
 }
 
 void readSensors() {
-  ds_temperature = readDsSensor();
-  readSTH15Sensor();
-  breakTime(ds_temperature, sht_temperature);
+  if (!startToClang && !Serial1.available()) {
+    ds_temperature = readDsSensor();
+    readSTH15Sensor();
+    breakTime(ds_temperature, sht_temperature);
+  }
 }

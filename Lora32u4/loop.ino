@@ -1,9 +1,9 @@
 void loop() {
-  if (userStep > 2 && !startToClang) timer.run(); // Interval for read sensors
   recieveFromArduino();
-  if (startToClang) {
+  if (userStep > 2) timer.run(); // Interval for read sensors
+  if (userStep > 2 && startToClang && !Serial1.available()) {
     toClang();
-  } else {
+  } else if ( !Serial1.available()) {
     steps(userStep);
   }
 }
