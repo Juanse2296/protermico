@@ -17,6 +17,7 @@ void showInDisplay(int textSize, int x, int y, String text) {
    User flow and order interactions with the keyboard or smart phone
 */
 void steps(int action) {
+  String messageToShow = "Cantidad arecolectar...?";
   switch (action) {
     case 0:
       showInDisplay(2, 0 , 15, messageToShow);
@@ -34,12 +35,13 @@ void steps(int action) {
       showTemperature(ds_temperature);
       break;
     case 4:
-      messageToShow = "Humedad:  " + String(humidity) + " %";
+      messageToShow = "Humedad:  " + String((int)humidity) + " %";
       showInDisplay(2, 10 , 15, messageToShow );
       break;
     case 5:
       if (resultAlgorithm > 0)  {
-        showInDisplay(2, 10 , 15, "Descanso: " + String(resultAlgorithm) + " min" );
+        messageToShow = "Descanso: " + String(resultAlgorithm) + " min";
+        showInDisplay(2, 10 , 15,  messageToShow);
       } else {
         showInDisplay(2, 10 , 15, "No es     necesario descansar" );
       }
