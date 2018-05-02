@@ -31,6 +31,3 @@ byte colPins[numCols]= {5,4,3,2}; //Columns 0 to 3
 //initializes an instance of the Keypad class
 Keypad myKeypad= Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols);
 
-//---Communication
-
-String message = "" ;
