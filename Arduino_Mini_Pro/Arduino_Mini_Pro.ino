@@ -8,7 +8,11 @@ SoftwareSerial serialToLora(13, 12);
 SoftwareSerial blueTooth(10, 11);
 String message = "" ;
 String dataBluethooth = "";
-boolean sendIt;
+char character;
+boolean sendTem;
+static int constantMillis;
+unsigned long interval = 2000;
+unsigned long previousMillis = 0;
 
 //--------------------------------------------Keypad 
 
