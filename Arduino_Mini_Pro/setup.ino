@@ -4,5 +4,5 @@ void setup() {
   blueTooth.begin(9600);
   sendTem = false;
   Serial.begin(9600);
+  initDisplay();
 }
-

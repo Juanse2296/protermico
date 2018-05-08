@@ -2,6 +2,14 @@
 #include <SoftwareSerial.h>
 #include <Keypad.h>
 
+#include <LiquidCrystal_I2C.h>
+
+//-------------------------------------------- DISPLAY
+
+LiquidCrystal_I2C lcd(0x27,16,2);  
+String messageToShow = "Protermico";
+char actionMessage = "";
+
 //-------------------------------------------- COMMUNICATION
 String inData;
 SoftwareSerial serialToLora(12, 13);
