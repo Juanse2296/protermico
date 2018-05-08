@@ -4,6 +4,5 @@ void setup() {
   blueTooth.begin(9600);
   sendTem = false;
   Serial.begin(9600);
-  Serial.println("Arduino mini pro");
 }
 

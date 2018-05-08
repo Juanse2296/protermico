@@ -1,11 +1,12 @@
 void blueToothRecieve() {
+  blueTooth.listen();
   unsigned long currentMillis = millis();
-  if (blueTooth.available()) {
+  while (blueTooth.available()) {
     dataBluethooth = blueTooth.readString();
     Serial.print("Received from bluetooth: ");
     Serial.println(dataBluethooth);
     if (dataBluethooth != NULL) {
-       //      De tiene el envio de todos los posibles datos
+      //      De tiene el envio de todos los posibles datos
       if (dataBluethooth == "stop") {
         sendTem = false;
       }

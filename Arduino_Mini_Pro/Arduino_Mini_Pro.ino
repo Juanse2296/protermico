@@ -4,9 +4,8 @@
 
 //-------------------------------------------- COMMUNICATION
 String inData;
-SoftwareSerial serialToLora(13, 12);
+SoftwareSerial serialToLora(12, 13);
 SoftwareSerial blueTooth(10, 11);
-String message = "" ;
 String dataBluethooth = "";
 char character;
 boolean sendTem;

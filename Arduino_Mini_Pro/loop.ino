@@ -1,5 +1,6 @@
 void loop() {
   keyPressed();
-  blueToothRecieve();
+  //blueToothRecieve();
+  recieveFromLora();
 }
 
