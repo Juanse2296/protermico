@@ -17,7 +17,7 @@ void generateMessage(char option, String data) {
       messageToShow = "Humedad: " + data + " %";
       break;
     case 'C':
-      messageToShow = "Descanzo: " + data + " min";
+      messageToShow = "Descanso: " + data + " min";
       break;
   }
 }
