@@ -1,7 +1,9 @@
 void initTemperature() {
   sensors_DS.begin();
   readSensors();
-  timer.setInterval(15000, readSensors);
+  timer.setInterval(10000, readSensors);
+  idTimer = timer.setInterval(3000, Clang);
+  timer.disable(idTimer);
 }
 
 void readDsSensor() {

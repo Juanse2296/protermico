@@ -25,4 +25,9 @@ String inData;
 String amount = "";
 boolean sendMessage = true;
 
+//-------------------------------------------- BUZZER
 
+int buzzer = A0;
+int numberOfAerts = 5;
+int buzzerState = LOW;
+int idTimer;
