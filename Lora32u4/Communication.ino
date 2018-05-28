@@ -2,8 +2,7 @@ void recieveFromArduino() {
   while (Serial1.available()) {
     char recieved = Serial1.read();
     handleRequest(recieved);
-    Serial.println(recieved);
-    // generateMessage(sht_temperature);
+    if (recieved == 'D') allowClang = ! allowClang;
   }
 }
 
