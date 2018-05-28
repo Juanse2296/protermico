@@ -3,6 +3,7 @@ void keyPressed() {
   if (keypressed != NO_KEY)  {
     actionMessage = keypressed;
     sendToLora(keypressed);
+      Serial.println(keypressed);
     switch (keypressed) {
       case 'A':
         Serial.println("Get temperature: ");
