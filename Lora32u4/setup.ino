@@ -4,3 +4,4 @@ void setup()   {
   pinMode(buzzer, OUTPUT);
   initTemperature();
 }
+

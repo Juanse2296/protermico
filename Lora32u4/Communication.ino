@@ -27,7 +27,7 @@ void handleRequest(char option) {
   sendMessage = true;
   if (option == 'A') generateMessage(sht_temperature);
   if (option == 'B') generateMessage(humidity);
-  if (option == 'C') generateMessage(resultAlgorithm);
+  if (option == 'C') sendToArduino(currentTime);
   sendMessage = false;
 }
 

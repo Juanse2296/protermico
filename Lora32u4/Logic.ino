@@ -9,6 +9,10 @@ void breakTime(float ds_temperature, float sht_temperature) {
     buzzerState = HIGH;
     timer.restartTimer(idTimer);
     timer.enable(idTimer);
+    timer.disable(idTimerSensors);
+    cronometer.setCounter(0, resultAlgorithm , 0, cronometer.COUNT_DOWN, onComplete);
+    cronometer.setInterval(print_time1, 1000);
+    cronometer.start();
   } else {
     resultAlgorithm = 0;
   }
@@ -24,3 +28,33 @@ float TG(float temperature) {
 float TA(float temperature) {
   return 0.6927 * temperature + 11.5695;
 }
+
+void onComplete() {
+  currentTime = "0";
+  buzzerState = HIGH;
+  digitalWrite(buzzer, buzzerState);
+  delay(1000);
+  buzzerState = LOW;
+  digitalWrite(buzzer, buzzerState);
+  delay(1000);
+  buzzerState = HIGH;
+  digitalWrite(buzzer, buzzerState);
+  delay(1000);
+  buzzerState = LOW;
+  digitalWrite(buzzer, buzzerState);
+  delay(1000);
+  buzzerState = HIGH;
+  digitalWrite(buzzer, buzzerState);
+  delay(1000);
+  buzzerState = LOW;
+  digitalWrite(buzzer, buzzerState);
+
+  timer.restartTimer(idTimerSensors);
+  timer.enable(idTimerSensors);
+}
+
+void print_time1()
+{
+  currentTime = cronometer.getCurrentTime();
+}
+

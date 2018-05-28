@@ -5,6 +5,7 @@
 #include <SoftwareSerial.h>
 #include <SHT1X.h>
 #include <SimpleTimer.h>
+#include "Countimer.h"
 
 //--------------------------------------------TEMPERATURE
 OneWire ourWire(5); // pin for ds sensor
@@ -17,6 +18,7 @@ float sht_temperature = 0;
 float humidity = 0;
 float ds_temperature = 0;
 int resultAlgorithm = 0;
+String currentTime = "0";
 
 //-------------------------------------------- COMMUNICATION
 
@@ -31,3 +33,11 @@ int buzzer = A0;
 int numberOfAerts = 5;
 int buzzerState = LOW;
 int idTimer;
+int idTimerSensors;
+boolean allowClang = true;
+
+//-------------------------------------------- COUNTER
+Countimer cronometer;
+boolean counting = false;
+int breakTimeCounter = 4000;
+long intervalReadSensors = 3600000;
