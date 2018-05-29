@@ -9,18 +9,18 @@ void showInDisplay() {
   lcd.print(messageToShowTwo);
 }
 
-void generateMessage(char option, String data) {
+void generateMessage(char option, String temporalData) {
   lcd.clear();
   switch (actionMessage) {
     case 'A':
       messageToShow = "Temperatura:";
-      messageToShowTwo = data + " grados";
+      messageToShowTwo = temporalData + " grados";
       break;
     case 'B':
-      messageToShow = "Humedad: " + data + " %";
+      messageToShow = "Humedad: " + temporalData + " %";
       break;
     case 'C':
-      messageToShow = "Descanso: " + data + " min";
+      messageToShow = "Descanso: " + temporalData + " min";
       break;
   }
 }

@@ -1,6 +1,8 @@
 void userConfiguration () {
   switch (userStep) {
     case 0:
+      messageToShow = "PROTERMICO,";
+      messageToShowTwo = "Bienvenido";
       delay(3000);
       userStep = 1;
       break;
@@ -13,7 +15,7 @@ void userConfiguration () {
       break;
     case 3:
       messageToShow = "A= Temp, B= Hume";
-      messageToShowTwo = "C= Dezc, D= Trab";
+      messageToShowTwo = "C= Desc, D= Trab";
       break;
     case 4:
       // Keep this case clean
@@ -22,10 +24,10 @@ void userConfiguration () {
 }
 
 void stepOne (char keypressed) {
-  userStep = 2;
-  lcd.clear();
-  messageToShow = "";
   if (isDigit(keypressed)) {
+    userStep = 2;
+    lcd.clear();
+    messageToShow = "";
     messageToShow += keypressed;
   }
 }

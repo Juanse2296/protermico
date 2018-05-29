@@ -1,8 +1,11 @@
 void loop() {
   keyPressed();
-  //blueToothRecieve();
-  recieveFromLora();
   showInDisplay();
-  userConfiguration();
+  if (activePhone) {
+    blueToothRecieve();
+  } else {
+    recieveFromLora();
+    userConfiguration();
+  }
 }
 

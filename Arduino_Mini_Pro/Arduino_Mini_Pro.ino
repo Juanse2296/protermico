@@ -47,4 +47,7 @@ Keypad myKeypad = Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols)
 int userStep = 0;
 int amount = 0;
 
+// ------------------------------------------- Phone configuration
+
+boolean activePhone = false;
 
