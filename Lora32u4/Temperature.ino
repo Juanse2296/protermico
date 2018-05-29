@@ -4,6 +4,7 @@ void initTemperature() {
   readSTH15Sensor();
   idTimerSensors = timer.setInterval(intervalReadSensors, readSensors);
   idTimer = timer.setInterval(breakTimeCounter, Clang);
+  timer.setInterval(10000, readSTH15Sensor);
   timer.disable(idTimer);
 }
 
@@ -19,6 +20,5 @@ void readSTH15Sensor() {
 
 void readSensors() {
   readDsSensor();
-  readSTH15Sensor();
   breakTime(ds_temperature, sht_temperature);
 }

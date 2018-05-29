@@ -40,4 +40,4 @@ boolean allowClang = true;
 Countimer cronometer;
 boolean counting = false;
 int breakTimeCounter = 4000;
-long intervalReadSensors = 3600000;
+long intervalReadSensors = 15000;

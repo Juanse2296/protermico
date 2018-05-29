@@ -53,8 +53,7 @@ void onComplete() {
   timer.enable(idTimerSensors);
 }
 
-void print_time1()
-{
+void print_time1(){
   currentTime = cronometer.getCurrentTime();
 }
 
