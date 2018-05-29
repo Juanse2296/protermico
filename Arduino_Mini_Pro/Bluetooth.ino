@@ -50,6 +50,8 @@ void connectionOn() {
   Serial.println("entra al connectionOn");
   blueTooth.print("#success~");
   blueTooth.println();
+  activePhone = false;
+  deviceResume();
 }
 void restTime(int minute) {
   Serial.println("entra al restTime");

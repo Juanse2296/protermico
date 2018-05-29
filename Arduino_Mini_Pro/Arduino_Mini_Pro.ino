@@ -50,4 +50,7 @@ int amount = 0;
 // ------------------------------------------- Phone configuration
 
 boolean activePhone = false;
+String messageTemporalOne = "";
+String messageTemporalTwo = "";
+int userStepTemp = 0;;
 
