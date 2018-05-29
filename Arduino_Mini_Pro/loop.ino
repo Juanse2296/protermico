@@ -3,5 +3,6 @@ void loop() {
   //blueToothRecieve();
   recieveFromLora();
   showInDisplay();
+  userConfiguration();
 }
 

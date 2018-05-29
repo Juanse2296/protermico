@@ -8,6 +8,8 @@
 
 LiquidCrystal_I2C lcd(0x27,16,2);  
 String messageToShow = "Protermico";
+String messageToShow = "PROTERMICO,";
+String messageToShowTwo = "Bienvenido";
 char actionMessage = "";
 
 //-------------------------------------------- COMMUNICATION
@@ -41,4 +43,9 @@ byte colPins[numCols]= {5,4,3,2}; //Columns 0 to 3
 
 //initializes an instance of the Keypad class
 Keypad myKeypad= Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols);
+//-------------------------------------------- USER FLOW
+
+int userStep = 0;
+int amount = 0;
+
 

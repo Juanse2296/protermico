@@ -5,13 +5,16 @@ void initDisplay() {
 void showInDisplay() {
   lcd.setCursor(0, 0);
   lcd.print(messageToShow);
+  lcd.setCursor(0, 1);
+  lcd.print(messageToShowTwo);
 }
 
 void generateMessage(char option, String data) {
   lcd.clear();
   switch (actionMessage) {
     case 'A':
-      messageToShow = "Temperatura: " + data + " grados";
+      messageToShow = "Temperatura:";
+      messageToShowTwo = data + " grados";
       break;
     case 'B':
       messageToShow = "Humedad: " + data + " %";

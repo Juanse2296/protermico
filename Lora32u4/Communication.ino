@@ -2,7 +2,7 @@ void recieveFromArduino() {
   while (Serial1.available()) {
     char recieved = Serial1.read();
     handleRequest(recieved);
-    if (recieved == 'D') allowClang = ! allowClang;
+    if (recieved == '#') allowClang = ! allowClang;
   }
 }
 
