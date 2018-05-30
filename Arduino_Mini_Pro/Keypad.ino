@@ -9,7 +9,7 @@ void keyPressed() {
 void userFunctions (char keypressed) {
   actionMessage = keypressed;
   sendToLora(keypressed);
-  if(!serialToLora.available()) keyPress = true;
+  if (!serialToLora.available()) keyPress = true;
   lcd.clear();
   switch (keypressed) {
     case 'A':
@@ -21,7 +21,10 @@ void userFunctions (char keypressed) {
       break;
     case 'C':
       messageToShow = "Descanso: " ;
-      messageToShowTwo = resultAlgorithm + " min";
+      if (resultAlgorithm.length() < 2) messageToShowTwo = resultAlgorithm + " min";
+      if (resultAlgorithm.length() > 5) {
+        messageToShowTwo = String(resultAlgorithm.charAt(2)) + String(resultAlgorithm.charAt(3)) + " : " + String(resultAlgorithm.charAt(4))  + String(resultAlgorithm.charAt(5)) + " min";
+      }
       break;
     case 'D':
       messageToShow = "Recogido:";

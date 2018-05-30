@@ -8,7 +8,7 @@
 #include "Countimer.h"
 
 //--------------------------------------------TEMPERATURE
-OneWire ourWire(5); // pin for ds sensor
+OneWire ourWire(A0); // pin for ds sensor
 DallasTemperature sensors_DS(&ourWire);
 
 //STH15
@@ -29,7 +29,7 @@ boolean sendMessage = true;
 
 //-------------------------------------------- BUZZER
 
-int buzzer = A0;
+int buzzer = 13;
 int numberOfAerts = 5;
 int buzzerState = LOW;
 int idTimer;
