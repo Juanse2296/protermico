@@ -4,13 +4,13 @@ void breakTime(float ds_temperature, float sht_temperature) {
   int B = 26;
   int D = 28;
   int ft = ((A - B) / ((C - D) + (A - B))) *  60;
-  if (ft < 60) {
+  if (ft > 0 && ft < 60) {
     resultAlgorithm = (int)60 - ft;
-    buzzerState = HIGH;
-    timer.restartTimer(idTimer);
     timer.enable(idTimer);
     timer.disable(idTimerSensors);
     cronometer.setCounter(0, resultAlgorithm , 0, cronometer.COUNT_DOWN, onComplete);
+    buzzerState = HIGH;
+    timer.restartTimer(idTimer);
     cronometer.setInterval(print_time1, 1000);
     cronometer.start();
   } else {
@@ -53,7 +53,7 @@ void onComplete() {
   timer.enable(idTimerSensors);
 }
 
-void print_time1(){
+void print_time1() {
   currentTime = cronometer.getCurrentTime();
 }
 

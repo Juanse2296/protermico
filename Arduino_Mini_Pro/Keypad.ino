@@ -9,18 +9,19 @@ void keyPressed() {
 void userFunctions (char keypressed) {
   actionMessage = keypressed;
   sendToLora(keypressed);
-  keyPress = true;
+  if(!serialToLora.available()) keyPress = true;
   lcd.clear();
   switch (keypressed) {
     case 'A':
       messageToShow = "Temperatura:";
-      if (resultAlgorithm.length() < 3)messageToShowTwo = temperature + " grados";
+      messageToShowTwo = temperature + " grados";
       break;
     case 'B':
       messageToShow = "Humedad: " + humidity + " %";
       break;
     case 'C':
-      if (resultAlgorithm.length() > 2) messageToShow = "Descanso: " + resultAlgorithm + " min";
+      messageToShow = "Descanso: " ;
+      messageToShowTwo = resultAlgorithm + " min";
       break;
     case 'D':
       messageToShow = "Recogido:";

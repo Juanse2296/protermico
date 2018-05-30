@@ -18,12 +18,13 @@ void recieveFromLora() {
             valueOption = 0;
             break;
           case 2 :
-            resultAlgorithm = inData;
+            if (inData.length() > 5) {
+              resultAlgorithm = inData;
+            }
             restTime(resultAlgorithm);
             valueOption = 0;
             break;
         }
-        gettingData = false;
       }
       inData = "";
     }
@@ -31,10 +32,8 @@ void recieveFromLora() {
 }
 
 void getInformationOne() {
-
   valueOption = 1;
   sendToLora('A');
-
 }
 
 void getInformationTwo() {

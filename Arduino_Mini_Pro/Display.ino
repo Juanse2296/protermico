@@ -14,13 +14,13 @@ void generateMessage(char option, String temporalData) {
   lcd.clear();
   switch (actionMessage) {
     case 'A':
-      temperature = temporalData;
+      if (valueOption == 0) temperature = temporalData;
       break;
     case 'B':
-      humidity = temporalData;
+      if (valueOption == 0) humidity = temporalData;
       break;
     case 'C':
-      resultAlgorithm = temporalData;
+      if (valueOption == 0)resultAlgorithm = temporalData;
       break;
   }
   keyPress = false;

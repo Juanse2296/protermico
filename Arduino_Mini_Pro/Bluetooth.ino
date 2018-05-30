@@ -37,9 +37,17 @@ void connectionOn() {
   blueTooth.print("#success~");
   blueTooth.println();
 }
+String value = "";
+char postionOne;
+char positionTwo;
+long timeInMillis;
 void restTime(String minute) {
   if (minute.toInt() > 0 && minute.length() > 2) {
-    int timeInMillis = minute.toInt() * constantMillis;
+    postionOne = minute.charAt(2);
+    positionTwo = minute.charAt(3);
+    value = String(postionOne) + String(positionTwo);
+    int result = value.toInt();
+    timeInMillis = result * 60000;
     blueTooth.print("*rest+" + String(timeInMillis) + "~");
     blueTooth.println();
   }
