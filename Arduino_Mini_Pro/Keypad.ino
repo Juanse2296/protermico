@@ -9,20 +9,20 @@ void keyPressed() {
 void userFunctions (char keypressed) {
   actionMessage = keypressed;
   sendToLora(keypressed);
-  //  Serial.println(keypressed);
+  keyPress = true;
+  lcd.clear();
   switch (keypressed) {
     case 'A':
-      //            Serial.println("Get temperature: ");
+      messageToShow = "Temperatura:";
+      if (resultAlgorithm.length() < 3)messageToShowTwo = temperature + " grados";
       break;
     case 'B':
-      //            Serial.println("Get humedity: ");
+      messageToShow = "Humedad: " + humidity + " %";
       break;
     case 'C':
-      //            Serial.println("Get breakTiem: ");
+      if (resultAlgorithm.length() > 2) messageToShow = "Descanso: " + resultAlgorithm + " min";
       break;
     case 'D':
-      //           Serial.println("Show amount");
-      lcd.clear();
       messageToShow = "Recogido:";
       int temporalAmount = amount / 10;
       messageToShowTwo =  String(temporalAmount) + " de " + String(amount);

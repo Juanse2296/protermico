@@ -14,15 +14,15 @@ void generateMessage(char option, String temporalData) {
   lcd.clear();
   switch (actionMessage) {
     case 'A':
-      messageToShow = "Temperatura:";
-      messageToShowTwo = temporalData + " grados";
+      temperature = temporalData;
       break;
     case 'B':
-      messageToShow = "Humedad: " + temporalData + " %";
+      humidity = temporalData;
       break;
     case 'C':
-      messageToShow = "Descanso: " + temporalData + " min";
+      resultAlgorithm = temporalData;
       break;
   }
+  keyPress = false;
 }
 

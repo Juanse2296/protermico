@@ -10,7 +10,7 @@ void breakTime(float ds_temperature, float sht_temperature) {
     timer.restartTimer(idTimer);
     timer.enable(idTimer);
     timer.disable(idTimerSensors);
-    cronometer.setCounter(0, 0 , 5, cronometer.COUNT_DOWN, onComplete);
+    cronometer.setCounter(0, resultAlgorithm , 0, cronometer.COUNT_DOWN, onComplete);
     cronometer.setInterval(print_time1, 1000);
     cronometer.start();
   } else {

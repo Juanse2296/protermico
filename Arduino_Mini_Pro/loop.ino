@@ -8,7 +8,8 @@ void loop() {
     userConfiguration();
   }
   if (sendTemperature) {
-    timer.run();
+    timer.enable(idSendToPhone);
   }
+  if(!keyPress)timer.run();
 }
 

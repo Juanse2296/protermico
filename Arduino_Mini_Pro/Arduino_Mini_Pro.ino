@@ -19,7 +19,9 @@ String dataBluethooth = "";
 char character;
 boolean sendTemperature;
 SimpleTimer timer;
-int intervalSendTemperature = 100;
+int idSendToPhone;
+int intervalSendTemperature = 2000;
+int valueOption = 0;
 
 //--------------------------------------------Keypad
 
@@ -46,6 +48,12 @@ Keypad myKeypad = Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols)
 
 int userStep = 0;
 int amount = 0;
+String temperature = "5";
+String humidity  = "0";
+String resultAlgorithm  = "0";
+boolean keyPress = false;
+int constantMillis;
+boolean gettingData = false;
 
 // ------------------------------------------- Phone configuration
 
