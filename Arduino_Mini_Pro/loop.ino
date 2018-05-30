@@ -7,5 +7,8 @@ void loop() {
     recieveFromLora();
     userConfiguration();
   }
+  if (sendTemperature) {
+    timer.run();
+  }
 }
 

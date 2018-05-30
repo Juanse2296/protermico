@@ -2,6 +2,7 @@
 #include <SoftwareSerial.h>
 #include <Keypad.h>
 #include <LiquidCrystal_I2C.h>
+#include <SimpleTimer.h>
 
 //-------------------------------------------- DISPLAY
 
@@ -16,10 +17,9 @@ SoftwareSerial serialToLora(12, 13);
 SoftwareSerial blueTooth(10, 11);
 String dataBluethooth = "";
 char character;
-boolean sendTem;
-static int constantMillis;
-unsigned long interval = 2000;
-unsigned long previousMillis = 0;
+boolean sendTemperature;
+SimpleTimer timer;
+int intervalSendTemperature = 100;
 
 //--------------------------------------------Keypad
 
