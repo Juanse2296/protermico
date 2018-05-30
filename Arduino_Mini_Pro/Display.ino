@@ -2,6 +2,7 @@ void initDisplay() {
   lcd.init();
   lcd.backlight();
 }
+
 void showInDisplay() {
   lcd.setCursor(0, 0);
   lcd.print(messageToShow);

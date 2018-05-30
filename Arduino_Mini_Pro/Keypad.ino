@@ -6,7 +6,6 @@ void keyPressed() {
   }
 }
 
-
 void userFunctions (char keypressed) {
   actionMessage = keypressed;
   sendToLora(keypressed);
